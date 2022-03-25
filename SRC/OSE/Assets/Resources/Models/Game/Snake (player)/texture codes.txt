@@ -1,0 +1,14 @@
+Example: 2E_TGR-STP_TXR_04109e = Texture "04109e" from 2 eyes Tiger Stripe
+
+2E_ = 2 eyes
+EP_ = eyepatch
+
+TXR_ = texture
+MTR_ = material
+
+_OLV-DRB = Olive Drab
+_TGR-STP = Tiger Stripe
+_TRE-BRK = Tree Bark
+_LEAF    = Leaf
+_SQR     = Squares
+_BLK     = Black
