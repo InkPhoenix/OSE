@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b2c66c292a115994f895bdc8a57d971d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Helvetica Neue LT Pro
+  fontNames:
+  - Helvetica Neue LT Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5199544b15174e0458498cfd8a3cc1c9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
