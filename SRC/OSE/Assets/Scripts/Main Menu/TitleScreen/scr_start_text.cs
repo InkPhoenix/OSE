@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scr_fade_start_text : MonoBehaviour
+public class scr_start_text : MonoBehaviour
 {
     private void Start() //in future change to "public void startFade()"
     {

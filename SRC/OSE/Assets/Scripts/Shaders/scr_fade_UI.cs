@@ -10,6 +10,7 @@ public class scr_fade_UI : MonoBehaviour
     bool crout_check = false;
     bool crout_check_newcycle = false;
     public bool is_ActionTriggered = false;
+    public bool is_final_transparent = false;
 
     public void FadeInAndOut()
     {
@@ -43,9 +44,18 @@ public class scr_fade_UI : MonoBehaviour
 
             if (is_ActionTriggered == true) //if button is pressed then interrupt the fading and set alpha to 1
             {
-                crout_check = false;
-                canvas_g.alpha = 1;
-                break;
+                if (is_final_transparent == true) //if we want it to be transparent when finished
+                {
+                    crout_check = false;
+                    canvas_g.alpha = 0;
+                    break;
+                }
+                else
+                {
+                    crout_check = false;
+                    canvas_g.alpha = 1;
+                    break;
+                }
             }
 
             yield return new WaitForEndOfFrame();
@@ -54,7 +64,7 @@ public class scr_fade_UI : MonoBehaviour
         if (crout_check == true) //if fading has finished...
         {
             if (crout_check_newcycle == true) { StartCoroutine(FadeCG(UIElement, UIElement.alpha, 1)); } //...and it faded-out, execute a fade-in
-            else { StartCoroutine(FadeCG(UIElement, UIElement.alpha, 0)); } //...and it faded-it, execute a fade-out
+            else { StartCoroutine(FadeCG(UIElement, UIElement.alpha, 0)); } //...and it faded-in, execute a fade-out
         }
         
         //debug.Log("Fade: done"); //DEBUG: runs after it's done fading
