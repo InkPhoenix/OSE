@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main Menu/scn_intro.unity
+    guid: 0f0bddd5319ade7429678e9300dccd0e
+  - enabled: 1
+    path: Assets/Scenes/Main Menu/scn_MainMenu.unity
+    guid: e321ae830d84e7a4cb91403507afa01f
+  - enabled: 1
+    path: Assets/Scenes/Debug/scn_ModelView.unity
+    guid: a88e9fd7d22597b49a1d5b519e2fbe5f
+  - enabled: 1
+    path: Assets/Scenes/Debug/scn_Game.unity
+    guid: 38cc3df95cce0d34f8867c35c9596ed5
   m_configObjects: {}

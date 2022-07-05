@@ -11028,9 +11028,8 @@ GameObject:
   - component: {fileID: 579715018}
   - component: {fileID: 579715020}
   - component: {fileID: 579715019}
-  - component: {fileID: 579715024}
-  - component: {fileID: 579715023}
   - component: {fileID: 579715022}
+  - component: {fileID: 579715023}
   - component: {fileID: 579715021}
   m_Layer: 5
   m_Name: Main Title
@@ -11368,21 +11367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd946ac4633800478fa079a734fa583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &579715024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579715017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33fbf26d07e2fc4aa39601ac697e3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIElement: {fileID: 579715022}
-  lerp_time: 0.5
-  is_ActionTriggered: 0
+  UI_element: {fileID: 579715022}
 --- !u!1 &580912151
 GameObject:
   m_ObjectHideFlags: 0
@@ -22599,7 +22584,6 @@ GameObject:
   - component: {fileID: 1248561186}
   - component: {fileID: 1248561185}
   - component: {fileID: 1248561189}
-  - component: {fileID: 1248561190}
   - component: {fileID: 1248561187}
   - component: {fileID: 1248561188}
   m_Layer: 5
@@ -22737,6 +22721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b347b052485671428bce8f31728741d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI_element: {fileID: 1248561189}
 --- !u!114 &1248561188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22935,21 +22920,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1248561190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248561183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33fbf26d07e2fc4aa39601ac697e3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIElement: {fileID: 1248561189}
-  lerp_time: 0.5
-  is_ActionTriggered: 0
 --- !u!1 &1249275193
 GameObject:
   m_ObjectHideFlags: 0
@@ -36356,7 +36326,6 @@ GameObject:
   - component: {fileID: 2128381441}
   - component: {fileID: 2128381440}
   - component: {fileID: 2128381445}
-  - component: {fileID: 2128381444}
   m_Layer: 5
   m_Name: TitleScreen
   m_TagString: Untagged
@@ -36447,21 +36416,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2128381444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128381439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33fbf26d07e2fc4aa39601ac697e3f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIElement: {fileID: 0}
-  lerp_time: 0.5
-  is_ActionTriggered: 0
 --- !u!225 &2128381445
 CanvasGroup:
   m_ObjectHideFlags: 0
