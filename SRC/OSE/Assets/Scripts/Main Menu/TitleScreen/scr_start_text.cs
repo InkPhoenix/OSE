@@ -7,7 +7,7 @@ using DG.Tweening;
 public class scr_start_text : MonoBehaviour
 {
     public CanvasGroup UI_element;
-    private float fade_time = 0.5f;
+    private float fade_time = 0.8f;
     private Guid uid;
     private Sequence sequence;
     private bool sequence_stopped = false;
@@ -22,7 +22,7 @@ public class scr_start_text : MonoBehaviour
         if (sequence == null) //create if there's none before
         {
             sequence = DOTween.Sequence();
-            sequence.Append(UI_element.DOFade(0, fade_time));
+            sequence.Append(UI_element.DOFade(0, fade_time).SetEase(Ease.InQuad));
             uid = System.Guid.NewGuid();
             sequence.id = uid;
         }

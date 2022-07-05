@@ -34,11 +34,11 @@ public class scr_intro : MonoBehaviour
 
     private IEnumerator sceneSwitch() //wait 0.5 seconds before switching scenes
     {
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         scr_fade_levelLoader loader_script = GameObject.Find("Crossfade").GetComponent<scr_fade_levelLoader>();
         loader_script.scene_name = "scn_MainMenu";
-        loader_script.fade_time = 0.5f;
-        yield return loader_script.sceneSwitchFadeIn();
+        scr_fade_levelLoader.make_fade_black_on_startup = true; //make the fade be of alpha 1 on startup of next scene
+        yield return loader_script.sceneSwitchFadeIn(0.1f, true);
     }
 
     private void changeScene() { StartCoroutine(sceneSwitch()); }

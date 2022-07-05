@@ -12,9 +12,20 @@ public class scr_main_title : MonoBehaviour
     private Sequence sequence;
     private bool sequence_stopped = false;
 
+    private IEnumerator fadeFromBlack()
+    {
+        scr_fade_levelLoader.make_fade_black_on_startup = false;
+        scr_fade_levelLoader loader_script = GameObject.Find("Crossfade(titlescreen)").GetComponent<scr_fade_levelLoader>();
+        CanvasGroup loader_script_alpha = GameObject.Find("Crossfade(titlescreen)").GetComponent<CanvasGroup>();
+        loader_script_alpha.alpha = 1;
+        yield return new WaitForSeconds(0.1f); //give it slight delay just to look better
+        StartCoroutine(loader_script.sceneSwitchFadeOut(1.25f, false));
+    }
+
     private void Start()
     {
-        startFade();
+        //startFade();
+        if (scr_fade_levelLoader.make_fade_black_on_startup == true) { StartCoroutine(fadeFromBlack()); }
     }
 
     public void startFade()
