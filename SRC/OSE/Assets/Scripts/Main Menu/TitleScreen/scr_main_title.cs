@@ -36,38 +36,16 @@ public class scr_main_title : MonoBehaviour
         StartCoroutine(startupFade());
     }
 
-    public void startFade()
-    {
-        /*if (sequence == null) //create if there's none before
-        {
-            sequence = DOTween.Sequence();
-            sequence.Append(UI_element.DOFade(1, fade_time));
-            uid = System.Guid.NewGuid();
-            sequence.id = uid;
-        }
-        sequence.Play();*/
-        UI_element.DOFade(1, fade_time);
-    }
+    public void startFade() { UI_element.DOFade(1, fade_time); }
 
     public void stopFade()
     {
-        //kill the sequence with ID uid and set sequence to NULL
-        /*DOTween.Kill(uid);
-        sequence = null;
-
-        //set alpha to 1
-        if (UI_element.alpha != 1 && sequence_stopped == false)
-        {
-            UI_element.alpha = 1;
-            sequence_stopped = true; //do this in case the alpha value happens to be 1 when button is pressed
-        }*/
-
         if (sequence_stopped == false) //do this to only activate once
         {
             UI_element.alpha = 1;
 
             Vector3 title_original_scale = transform.localScale;
-            Vector3 title_scale_to = title_original_scale * 1.8f; //scale up the title by 2.2
+            Vector3 title_scale_to = title_original_scale * 1.8f; //scale up the title by 1.8
 
             sequence_stopped = true;
 
