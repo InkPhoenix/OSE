@@ -14,15 +14,22 @@ public class scr_start_text : MonoBehaviour
 
     private void Start()
     {
-        startFade();
+        UI_element.alpha = 0;
+        StartCoroutine(startupTextFade());
     }
 
-    public void startFade()
+    private IEnumerator startupTextFade()
+    {
+        yield return new WaitForSeconds(3.5f); //wait before fading-in the text
+        startTextFade();
+    }
+
+    public void startTextFade()
     {
         if (sequence == null) //create if there's none before
         {
             sequence = DOTween.Sequence();
-            sequence.Append(UI_element.DOFade(0, fade_time).SetEase(Ease.InQuad));
+            sequence.Append(UI_element.DOFade(1, fade_time).SetEase(Ease.InQuad));
             uid = System.Guid.NewGuid();
             sequence.id = uid;
         }

@@ -7,10 +7,10 @@ using DG.Tweening;
 public class scr_main_title : MonoBehaviour
 {
     public CanvasGroup UI_element;
-    private float fade_time = 0.5f;
+    private float fade_time = 2.0f;
     private Guid uid;
     private Sequence sequence;
-    private bool sequence_stopped = false;
+    private bool sequence_stopped;
 
     private IEnumerator fadeFromBlack()
     {
@@ -22,28 +22,37 @@ public class scr_main_title : MonoBehaviour
         StartCoroutine(loader_script.sceneSwitchFadeOut(1.25f, false));
     }
 
+    private IEnumerator startupFade()
+    {
+        yield return new WaitForSeconds(1.5f); //wait before fading-in the title
+        startFade();
+    }
+
     private void Start()
     {
-        //startFade();
+        sequence_stopped = false;
+        UI_element.alpha = 0;
         if (scr_fade_levelLoader.make_fade_black_on_startup == true) { StartCoroutine(fadeFromBlack()); }
+        StartCoroutine(startupFade());
     }
 
     public void startFade()
     {
-        if (sequence == null) //create if there's none before
+        /*if (sequence == null) //create if there's none before
         {
             sequence = DOTween.Sequence();
-            sequence.Append(UI_element.DOFade(0, fade_time));
+            sequence.Append(UI_element.DOFade(1, fade_time));
             uid = System.Guid.NewGuid();
             sequence.id = uid;
         }
-        sequence.Play().SetLoops(-1, LoopType.Yoyo);
+        sequence.Play();*/
+        UI_element.DOFade(1, fade_time);
     }
 
     public void stopFade()
     {
         //kill the sequence with ID uid and set sequence to NULL
-        DOTween.Kill(uid);
+        /*DOTween.Kill(uid);
         sequence = null;
 
         //set alpha to 1
@@ -51,6 +60,20 @@ public class scr_main_title : MonoBehaviour
         {
             UI_element.alpha = 1;
             sequence_stopped = true; //do this in case the alpha value happens to be 1 when button is pressed
+        }*/
+
+        if (sequence_stopped == false) //do this to only activate once
+        {
+            UI_element.alpha = 1;
+
+            Vector3 title_original_scale = transform.localScale;
+            Vector3 title_scale_to = title_original_scale * 1.8f; //scale up the title by 2.2
+
+            sequence_stopped = true;
+
+            UI_element.transform.DOScale(title_scale_to, 2.0f);
+            UI_element.DOFade(0, 2.0f);
+            Debug.Log("triggered");
         }
     }
 }
