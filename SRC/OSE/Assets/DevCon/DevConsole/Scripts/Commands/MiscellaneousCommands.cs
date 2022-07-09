@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace IngameDebugConsole.Commands
+namespace DevCon.Commands
 {
 	public class MiscellaneousCommands
 	{

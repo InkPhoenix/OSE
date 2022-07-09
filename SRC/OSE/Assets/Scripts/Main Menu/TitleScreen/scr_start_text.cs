@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class scr_start_text : MonoBehaviour
 {
     public CanvasGroup UI_element;
     public CanvasGroup back_fade;
     public CanvasGroup front_fade;
+    public TextMeshProUGUI UI_element_text;
+    public TextMeshProUGUI back_fade_text;
+    public TextMeshProUGUI front_fade_text;
+    
     private float fade_time = 0.8f;
     private Guid uid;
     private Sequence sequence;
@@ -41,13 +46,13 @@ public class scr_start_text : MonoBehaviour
 
     public void stopFade()
     {
+        //kill the sequence with ID uid and set sequence to NULL
+        DOTween.Kill(uid);
+        sequence = null;
+
         //only execute this once
         if (sequence_stopped == false)
         {
-            //kill the sequence with ID uid and set sequence to NULL
-            DOTween.Kill(uid);
-            sequence = null;
-
             //set alphas to 1
             sequence_stopped = true;
             UI_element.alpha = 1;
@@ -56,14 +61,22 @@ public class scr_start_text : MonoBehaviour
 
             //start animations
             Vector3 text_original_scale = transform.localScale;
-            Vector3 text_scale_to = text_original_scale * 1.8f; //scale up the text by 1.8
+            float text_scale_to = text_original_scale.x * 1.35f; //scale up the text by 1.35
 
-            UI_element.transform.DOScale(text_scale_to, 2.0f);
-            back_fade.transform.DOScale(text_scale_to, 2.0f);
-            front_fade.transform.DOScale(text_scale_to, 2.0f);
-            UI_element.DOFade(0, 2.0f);
-            back_fade.DOFade(0, 1.0f);
-            front_fade.DOFade(0, 1.0f);
+            //Tween the text spacing
+            DOTween.To(() => UI_element_text.characterSpacing, x => UI_element_text.characterSpacing = x, 1.5f, 0.75f);
+            DOTween.To(() => back_fade_text.characterSpacing, x => back_fade_text.characterSpacing = x, 1.5f, 0.75f);
+            DOTween.To(() => front_fade_text.characterSpacing, x => front_fade_text.characterSpacing = x, 1.5f, 0.75f);
+
+            //Twwen the text scale
+            UI_element.transform.DOScaleX(text_scale_to, 0.75f);
+            back_fade.transform.DOScaleX(text_scale_to, 0.75f);
+            front_fade.transform.DOScaleX(text_scale_to, 0.75f);
+
+            //Tween the text fade
+            UI_element.DOFade(0, 0.75f);
+            back_fade.DOFade(0, 0.25f);
+            front_fade.DOFade(0, 0.25f);
         }
     }
 }

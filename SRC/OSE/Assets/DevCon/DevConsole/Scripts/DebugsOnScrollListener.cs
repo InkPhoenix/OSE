@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 // 
 // Procedure: if, after a user input (drag or scroll), scrollbar is at the bottom, then 
 // snap to bottom shall be true, otherwise it shall be false
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public class DebugsOnScrollListener : MonoBehaviour, IScrollHandler, IBeginDragHandler, IEndDragHandler
 	{

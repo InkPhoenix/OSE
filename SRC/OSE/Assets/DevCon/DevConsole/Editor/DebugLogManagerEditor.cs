@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace IngameDebugConsole
+namespace DevCon
 {
 	[CustomEditor( typeof( DebugLogManager ) )]
 	public class DebugLogManagerEditor : Editor

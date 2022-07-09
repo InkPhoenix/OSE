@@ -1,7 +1,7 @@
 {
-    "name": "IngameDebugConsole.Editor",
+    "name": "DevCon.Editor",
     "references": [
-        "IngameDebugConsole.Runtime"
+        "DevCon.Runtime"
     ],
     "includePlatforms": [
         "Editor"

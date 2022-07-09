@@ -19,7 +19,7 @@ using SystemInfo = UnityEngine.Device.SystemInfo; // To support Device Simulator
 // Supported method parameter types: int, float, bool, string, Vector2, Vector3, Vector4
 
 // Helper class to store important information about a command
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public class ConsoleMethodInfo
 	{

@@ -12,9 +12,9 @@ public class scr_fade_levelLoader : MonoBehaviour
 
     public void sometimesIHateCoroutines() { SceneManager.LoadScene(scene_name); }
 
-    public IEnumerator sceneSwitchFadeIn(float fade_time, bool loads_level) //Fades-in and switching scenes
+    public IEnumerator sceneSwitchFadeIn(float fade_time, bool loads_level, Ease ease_type) //Fades-in and switching scenes
     {
-        if (loads_level == true) { fade.DOFade(1, fade_time).OnStepComplete(sometimesIHateCoroutines); }
+        if (loads_level == true) { fade.DOFade(1, fade_time).SetEase(ease_type).OnStepComplete(sometimesIHateCoroutines); }
         else { fade.DOFade(1, fade_time); }
         
         yield return null;

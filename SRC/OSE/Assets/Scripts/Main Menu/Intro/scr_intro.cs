@@ -8,7 +8,6 @@ public class scr_intro : MonoBehaviour
     public CanvasGroup logo_alpha;
     public CanvasGroup fade;
     private float fade_time = 1.3f; //fading time
-    private scr_fade_levelLoader script_fade; //reference to level loader fade
 
     public IEnumerator timer() //timer
     {
@@ -19,10 +18,10 @@ public class scr_intro : MonoBehaviour
 
     public void Start()
     {
-        //reference an object that includes the level loade fade script, set fade value to 0 to be sure
+        //reference an object that includes the level loader fade script
         scr_fade_levelLoader loader_script = GameObject.Find("Crossfade").GetComponent<scr_fade_levelLoader>();
-        loader_script.fade.alpha = 0;
 
+        loader_script.fade.alpha = 0; //set fade value to 0 just to be sure
         logo_alpha.alpha = 0;
         logo_alpha.DOFade(1, fade_time).OnStepComplete(onComplete); //fade-in
     }
@@ -34,11 +33,10 @@ public class scr_intro : MonoBehaviour
 
     private IEnumerator sceneSwitch() //wait 0.5 seconds before switching scenes
     {
-        //yield return new WaitForSeconds(0.5f);
         scr_fade_levelLoader loader_script = GameObject.Find("Crossfade").GetComponent<scr_fade_levelLoader>();
-        loader_script.scene_name = "scn_MainMenu";
+        loader_script.scene_name = "scn_titlescreen";
         scr_fade_levelLoader.make_fade_black_on_startup = true; //make the fade be of alpha 1 on startup of next scene
-        yield return loader_script.sceneSwitchFadeIn(0.1f, true);
+        yield return loader_script.sceneSwitchFadeIn(0.1f, true, Ease.Linear);
     }
 
     private void changeScene() { StartCoroutine(sceneSwitch()); }

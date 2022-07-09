@@ -88,8 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 437128}
   - component: {fileID: 11418932}
-  - component: {fileID: 11492840}
   - component: {fileID: 114575087663981696}
+  - component: {fileID: 4855011125092762356}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -126,25 +126,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 0
   m_DragThreshold: 5
---- !u!114 &11492840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &114575087663981696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +138,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1511ccae7919cfc46b603b9b337fdc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4855011125092762356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_PointAction: {fileID: 1738275340612962625, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_MoveAction: {fileID: 7934261829115366365, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_SubmitAction: {fileID: 1655666276393678475, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_CancelAction: {fileID: 5903043659033288612, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_LeftClickAction: {fileID: 7972672565942019478, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_MiddleClickAction: {fileID: -1944527871689045230, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_RightClickAction: {fileID: -4761997404095950806, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_ScrollWheelAction: {fileID: -5815503843366796009, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: -5489450912123733498, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -5418287628890679427, guid: 6f5310a98d883704f9aeae6cb545a96c,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1 &110786
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +681,7 @@ GameObject:
   - component: {fileID: 11452418}
   - component: {fileID: 3176261859222344855}
   m_Layer: 5
-  m_Name: IngameDebugConsole
+  m_Name: DevCon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

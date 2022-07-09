@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 // Manager class for the debug popup
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public class DebugLogPopup : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 	{

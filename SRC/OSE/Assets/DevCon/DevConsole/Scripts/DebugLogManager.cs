@@ -24,7 +24,7 @@ using Screen = UnityEngine.Device.Screen; // To support Device Simulator on Unit
 // to show their properties on screen (these log items are recycled as the list is scrolled)
 
 // An enum to represent filtered log types
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public enum DebugLogFilter
 	{

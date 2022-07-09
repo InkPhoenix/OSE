@@ -1,6 +1,6 @@
 ﻿// #define RESET_REMOVED_ELEMENTS
 
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public class CircularBuffer<T>
 	{

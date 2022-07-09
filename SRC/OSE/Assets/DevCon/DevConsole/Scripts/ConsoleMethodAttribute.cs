@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IngameDebugConsole
+namespace DevCon
 {
 	[AttributeUsage( AttributeTargets.Method, Inherited = false, AllowMultiple = true )]
 	public class ConsoleMethodAttribute : Attribute

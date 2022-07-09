@@ -1,4 +1,4 @@
-﻿namespace IngameDebugConsole
+﻿namespace DevCon
 {
 	public class DebugLogIndexList
 	{

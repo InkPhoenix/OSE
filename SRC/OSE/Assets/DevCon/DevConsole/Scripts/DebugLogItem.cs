@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 #endif
 
 // A UI element to show information about a debug entry
-namespace IngameDebugConsole
+namespace DevCon
 {
 	public class DebugLogItem : MonoBehaviour, IPointerClickHandler
 	{
