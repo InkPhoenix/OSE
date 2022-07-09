@@ -13,7 +13,8 @@ public class scr_start_text : MonoBehaviour
     public TextMeshProUGUI UI_element_text;
     public TextMeshProUGUI back_fade_text;
     public TextMeshProUGUI front_fade_text;
-    
+    public AudioSource SFXSource;
+
     private float fade_time = 0.8f;
     private Guid uid;
     private Sequence sequence;
@@ -58,6 +59,9 @@ public class scr_start_text : MonoBehaviour
             UI_element.alpha = 1;
             back_fade.alpha = 1;
             front_fade.alpha = 1;
+
+            //play SFX
+            SFXSource.Play();
 
             //start animations
             Vector3 text_original_scale = transform.localScale;

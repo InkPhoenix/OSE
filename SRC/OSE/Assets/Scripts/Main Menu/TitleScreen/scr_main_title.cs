@@ -11,6 +11,7 @@ public class scr_main_title : MonoBehaviour
     private Guid uid;
     private Sequence sequence;
     private bool sequence_stopped;
+    public AudioSource musicSource;
 
     private IEnumerator fadeFromBlack()
     {
@@ -19,12 +20,16 @@ public class scr_main_title : MonoBehaviour
         CanvasGroup loader_script_alpha = GameObject.Find("Crossfade").GetComponent<CanvasGroup>();
         loader_script_alpha.alpha = 1;
         yield return new WaitForSeconds(0.1f); //give it slight delay just to look better
-        StartCoroutine(loader_script.sceneSwitchFadeOut(1.25f, false));
+        StartCoroutine(loader_script.sceneSwitchFadeOut(1.25f, false, Ease.Linear));
     }
 
     private IEnumerator startupFade()
     {
-        yield return new WaitForSeconds(1.5f); //wait before fading-in the title
+        yield return new WaitForSeconds(1.0f); //wait before playing the BGM
+        musicSource.Play();
+        Debug.Log("BGM started");
+        yield return new WaitForSeconds(0.5f); //wait before fading-in the title
+        Debug.Log("Fade started");
         startFade();
     }
 

@@ -16,15 +16,13 @@ public class scr_fade_levelLoader : MonoBehaviour
     {
         if (loads_level == true) { fade.DOFade(1, fade_time).SetEase(ease_type).OnStepComplete(sometimesIHateCoroutines); }
         else { fade.DOFade(1, fade_time); }
-        
         yield return null;
     }
 
-    public IEnumerator sceneSwitchFadeOut(float fade_time, bool loads_level) //Fades-out and switching scenes
+    public IEnumerator sceneSwitchFadeOut(float fade_time, bool loads_level, Ease ease_type) //Fades-out and switching scenes
     {
-        if (loads_level == true) { fade.DOFade(0, fade_time).OnStepComplete(sometimesIHateCoroutines); }
+        if (loads_level == true) { fade.DOFade(0, fade_time).SetEase(ease_type).OnStepComplete(sometimesIHateCoroutines); }
         else { fade.DOFade(0, fade_time); }
-        
         yield return null;
     }
 }
