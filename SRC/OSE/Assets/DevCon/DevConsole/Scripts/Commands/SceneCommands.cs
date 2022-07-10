@@ -60,7 +60,7 @@ namespace DevCon.Commands
         {
             int sceneCountTotal = SceneManager.sceneCountInBuildSettings;
             string[] sceneNameTotal = new string[sceneCountTotal];
-            string result = "Total Scenes in build: " + sceneCountTotal + " || Scenes:     (click here)\n\n";
+            string result = "Total scenes in build: " + sceneCountTotal + " || Scenes:     (click here)\n\n";
 
             for (int i = 0; i < sceneCountTotal; i++)
             {
@@ -68,6 +68,22 @@ namespace DevCon.Commands
             }
 
             foreach(string scn in sceneNameTotal) { result += scn.ToString() + "\n"; } //add scene names to result
+            Debug.Log(result);
+        }
+
+        [ConsoleMethod("scene.list.loaded", "Lists all scenes currently loaded"), UnityEngine.Scripting.Preserve]
+        public static void ListSceneLoaded()
+        {
+            int loadedSceneCountTotal = SceneManager.sceneCount;
+            string[] loadedSceneNameTotal = new string[loadedSceneCountTotal];
+            string result = "Total scenes loaded: " + loadedSceneCountTotal + " || Scenes:     (click here)\n\n";
+
+            for (int i = 0; i < loadedSceneCountTotal; i++)
+            {
+                loadedSceneNameTotal[i] = SceneManager.GetSceneAt(i).name;
+            }
+
+            foreach (string scn in loadedSceneNameTotal) { result += scn.ToString() + "\n"; } //add scene names to result
             Debug.Log(result);
         }
     }

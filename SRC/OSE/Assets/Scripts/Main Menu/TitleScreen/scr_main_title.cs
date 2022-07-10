@@ -27,9 +27,7 @@ public class scr_main_title : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f); //wait before playing the BGM
         musicSource.Play();
-        Debug.Log("BGM started");
         yield return new WaitForSeconds(0.5f); //wait before fading-in the title
-        Debug.Log("Fade started");
         startFade();
     }
 
