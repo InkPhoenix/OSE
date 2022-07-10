@@ -56,6 +56,8 @@ public class scr_main_title : MonoBehaviour
             
             UI_element.transform.DOScale(title_scale_to, 2.0f);
             UI_element.DOFade(0, 2.0f);
+
+            DOTween.To(() => musicSource.volume, x => musicSource.volume = x, 0, 2.0f).SetEase(Ease.InSine); //fade-out BGM volume
         }
     }
 
