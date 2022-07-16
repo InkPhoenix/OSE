@@ -1,7 +1,5 @@
 stuff to do for the project:
 
--implement a scene command that lists all scenes (scene.list)
--implement a scene command that lists all active scenes (scene.list.active)
 -implement controller support
 -create test player model
 -implement camera movement using that better package

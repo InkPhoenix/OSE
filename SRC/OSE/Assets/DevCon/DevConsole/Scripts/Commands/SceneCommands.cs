@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 namespace DevCon.Commands
 {
@@ -8,25 +9,29 @@ namespace DevCon.Commands
 		[ConsoleMethod("scene.load", "Loads a scene"), UnityEngine.Scripting.Preserve]
 		public static void LoadScene(string sceneName)
 		{
-			LoadSceneInternal(sceneName, false, LoadSceneMode.Single);
+            DOTween.KillAll();
+            LoadSceneInternal(sceneName, false, LoadSceneMode.Single);
 		}
 
 		[ConsoleMethod("scene.load", "Loads a scene"), UnityEngine.Scripting.Preserve]
 		public static void LoadScene(string sceneName, LoadSceneMode mode)
 		{
-			LoadSceneInternal(sceneName, false, mode);
+            DOTween.KillAll();
+            LoadSceneInternal(sceneName, false, mode);
 		}
 
 		[ConsoleMethod("scene.loadasync", "Loads a scene asynchronously"), UnityEngine.Scripting.Preserve]
 		public static void LoadSceneAsync(string sceneName)
 		{
-			LoadSceneInternal(sceneName, true, LoadSceneMode.Single);
+            DOTween.KillAll();
+            LoadSceneInternal(sceneName, true, LoadSceneMode.Single);
 		}
 
 		[ConsoleMethod("scene.loadasync", "Loads a scene asynchronously"), UnityEngine.Scripting.Preserve]
 		public static void LoadSceneAsync(string sceneName, LoadSceneMode mode)
 		{
-			LoadSceneInternal(sceneName, true, mode);
+            DOTween.KillAll();
+            LoadSceneInternal(sceneName, true, mode);
 		}
 
 		private static void LoadSceneInternal(string sceneName, bool isAsync, LoadSceneMode mode)
@@ -52,7 +57,8 @@ namespace DevCon.Commands
 		[ConsoleMethod("scene.restart", "Restarts the active scene"), UnityEngine.Scripting.Preserve]
 		public static void RestartScene()
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            DOTween.KillAll();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 		}
 
         [ConsoleMethod("scene.list", "Lists all scenes present in the build settings by build order"), UnityEngine.Scripting.Preserve]
